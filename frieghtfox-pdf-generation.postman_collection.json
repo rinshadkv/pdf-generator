@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "b47552e4-158c-43bc-a004-2aa355a4b1c3",
+		"name": "frieghtfox-pdf-generation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33669743"
+	},
+	"item": [
+		{
+			"name": "generate pdf",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"seller\": \"XYZ Pvt. Ltd.\",\r\n\"sellerGstin\": \"29AABBCCDD121ZD\",\r\n\"sellerAddress\": \"New Delhi, India\",\r\n\"buyer\": \"Vedant Computers\",\r\n\"buyerGstin\": \"29AABBCCDD131ZD\",\r\n\"buyerAddress\": \"New Delhi, India\",\r\n\"items\": [\r\n{\r\n\"name\": \"Product 1\",\r\n\"quantity\": \"12 Nos\",\r\n\"rate\": 123.00,\r\n\"amount\": 1476.00\r\n}\r\n]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/pdf/generate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pdf",
+						"generate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "download pdf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"seller\": \"XYZ Pvt. Ltd.\",\r\n\"sellerGstin\": \"29AABBCCDD121ZD\",\r\n\"sellerAddress\": \"New Delhi, India\",\r\n\"buyer\": \"Vedant Computers\",\r\n\"buyerGstin\": \"29AABBCCDD131ZD\",\r\n\"buyerAddress\": \"New Delhi, India\",\r\n\"items\": [\r\n{\r\n\"name\": \"Product 1\",\r\n\"quantity\": \"12 Nos\",\r\n\"rate\": 123.00,\r\n\"amount\": 1476.00\r\n}\r\n]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/pdf/download/058b48b119fa0b60250f1adc05776468",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pdf",
+						"download",
+						"058b48b119fa0b60250f1adc05776468"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

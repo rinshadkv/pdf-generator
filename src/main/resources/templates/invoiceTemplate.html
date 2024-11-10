@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Invoice</title>
+</head>
+<body>
+<h1 align="center">Invoice</h1>
+
+<table border="1" width="100%">
+    <thead>
+    <tr>
+        <th colspan="2"><h3>Seller: <span th:text="${seller}"></span></h3>
+            <p>GSTIN: <span th:text="${sellerGstin}"></span></p>
+            <p>Address: <span th:text="${sellerAddress}"></span></p></th>
+        <th colspan="2">
+            <h3>Buyer: <span th:text="${buyer}"></span></h3>
+            <p>GSTIN: <span th:text="${buyerGstin}"></span></p>
+            <p>Address: <span th:text="${buyerAddress}"></span></p>
+        </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Rate</th>
+        <th>Amount</th>
+
+    </tr>
+
+    <tr th:each="item : ${items}">
+        <td th:text="${item.name}"></td>
+        <td th:text="${item.quantity}"></td>
+        <td th:text="${item.rate}"></td>
+        <td th:text="${item.amount}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
